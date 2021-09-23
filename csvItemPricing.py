@@ -22,8 +22,9 @@ with open(csvInvDir, 'r') as csvfile: #Extract item info
 items.pop(0)
 
 for item in items:
-    itemUrlValid = item.name.replace(" ", "_").lower()
-    itemUrlValid = itemUrlValid.replace("-", "_")
+    if item.name.endswith(' '):
+        item.name = item.name[:-1]
+    itemUrlValid = item.name.replace("'", "").replace(" ", "_").replace("-", "_").lower()
     
     validFilter = '(chassis|neuroptics|systems|carapace|cerebrum)_blueprint'
     if re.search(validFilter, itemUrlValid):

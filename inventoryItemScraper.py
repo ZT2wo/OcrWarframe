@@ -1,7 +1,10 @@
 import easyocr
 import os
+from PIL import Image, ImageDraw
 import image_slicer as slicer
 import csv
+
+from numpy import mod
 
 class Item:
         def __init__(self, name, count, mean, max, min, mode):
@@ -26,16 +29,30 @@ if __name__ == '__main__':
 
     #Define directories
     imgFullDir = 'OcrWarframe/inventory_screenshots'
+    modFullDir = 'OcrWarframe/mod_screenshots'
     imgCutDir = 'OcrWarframe/cut_images'
     csvDir = 'OcrWarframe/inventory_data.csv'
 
 
-    #Slice screenshot
+    #Slice inv screenshots
     for filename in os.listdir(imgFullDir):
         if filename.endswith(".jpg") or filename.endswith(".png"):
             img = os.path.join(imgFullDir, filename)
             tiles = slicer.slice(img, col=6, row=4, save=False)
             slicer.save_tiles(tiles,filename,"OcrWarframe/cut_images","png")
+    #Slice mod screenshots
+    for filename in os.listdir(modFullDir):
+        if filename.endswith(".jpg") or filename.endswith(".png"):
+            img = os.path.join(modFullDir, filename)
+            tiles = slicer.slice(img, col=7, row=3, save=False)
+            slicer.save_tiles(tiles,"mod" + filename,"OcrWarframe/cut_images","png")
+            for filename in os.listdir(imgCutDir):
+                if filename.startswith("mod"):
+                    modImage = Image.open("OcrWarframe/cut_images/" + filename)
+                    width, height = modImage.size
+                    draw = ImageDraw.Draw(modImage)
+                    draw.rectangle(((width/3,height/3),(width,0)),fill='black')
+                    modImage.save("OcrWarframe/cut_images/" + filename,"PNG")
 
     reader = easyocr.Reader({'en'}, gpu=True) #Start reader
 
