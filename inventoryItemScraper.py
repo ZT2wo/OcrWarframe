@@ -7,15 +7,17 @@ import csv
 from numpy import mod
 
 class Item:
-        def __init__(self, name, count, mean, max, min, mode):
+        def __init__(self, name, count, mean, max, min, mode, ducat, type):
             self.name = name
             self.count = count
             self.mean = mean
             self.max = max
             self.min = min
             self.mode = mode
+            self.ducat = ducat
+            self.type = type
         def __str__(self):
-            return f'Item:{self.name :<40} Amount:{self.count :<8} Mean:{self.mean :<8} Max:{self.max :<8} Min:{self.min :<8} Mode:{self.mode :<8}'
+            return f'Item:{self.name :<40} Amount:{self.count :<8} Mean:{self.mean :<8} Max:{self.max :<8} Min:{self.min :<8} Mode:{self.mode :<8} Ducats:{self.ducat :<8} Type:{self.type :<8}'
 
 def grossFixes(itemName):
     if 'Ivafa' in itemName:
@@ -39,20 +41,20 @@ if __name__ == '__main__':
         if filename.endswith(".jpg") or filename.endswith(".png"):
             img = os.path.join(imgFullDir, filename)
             tiles = slicer.slice(img, col=6, row=4, save=False)
-            slicer.save_tiles(tiles,filename,"OcrWarframe/cut_images","png")
+            slicer.save_tiles(tiles,filename,imgCutDir,"png")
     #Slice mod screenshots
     for filename in os.listdir(modFullDir):
         if filename.endswith(".jpg") or filename.endswith(".png"):
             img = os.path.join(modFullDir, filename)
             tiles = slicer.slice(img, col=7, row=3, save=False)
-            slicer.save_tiles(tiles,"mod" + filename,"OcrWarframe/cut_images","png")
-            for filename in os.listdir(imgCutDir):
-                if filename.startswith("mod"):
-                    modImage = Image.open("OcrWarframe/cut_images/" + filename)
-                    width, height = modImage.size
-                    draw = ImageDraw.Draw(modImage)
-                    draw.rectangle(((width/3,height/3),(width,0)),fill='black')
-                    modImage.save("OcrWarframe/cut_images/" + filename,"PNG")
+            slicer.save_tiles(tiles,"mod" + filename, imgCutDir,"png")
+    for filename in os.listdir(imgCutDir):
+        if filename.startswith("mod"):
+            modImage = Image.open(os.path.join(imgCutDir, filename))
+            width, height = modImage.size
+            draw = ImageDraw.Draw(modImage)
+            draw.rectangle(((width/3,height/3),(width,0)),fill='black')
+            modImage.save(os.path.join(imgCutDir, filename),"PNG")
 
     reader = easyocr.Reader({'en'}, gpu=True) #Start reader
 
@@ -62,7 +64,10 @@ if __name__ == '__main__':
     for filename in os.listdir(imgCutDir):
         if filename.endswith(".png"):
             result = reader.readtext(os.path.join(imgCutDir, filename))
-
+            if filename.startswith('mod'):
+                itemType = 'Mod'
+            else:
+                itemType = 'Prime'
             itemData = []
             for text in result:
                 itemData.append(text[1]) #Extract relevant data from result
@@ -81,7 +86,7 @@ if __name__ == '__main__':
                     #Gross Fixes
                     itemName = grossFixes(itemName)
 
-                    item = Item(itemName,itemCount,0,0,100000,0)
+                    item = Item(itemName,itemCount,0,0,100000,0,0,itemType)
                     items.append(item)
 
                 except ValueError: #Parse item without count
@@ -91,7 +96,7 @@ if __name__ == '__main__':
                     #Gross Fixes
                     itemName = grossFixes(itemName)
                     
-                    item = Item(itemName,1,0,0,100000,0) #Create item object
+                    item = Item(itemName,1,0,0,100000,0,0,itemType) #Create item object
                     items.append(item) #Add to object list
             else:
                 pass
@@ -107,10 +112,10 @@ if __name__ == '__main__':
 
     with open(csvDir, 'w', encoding='UTF8', newline='')as f:
         writer = csv.writer(f) #Start writer
-        header = ['Item Name', 'Amount', 'Mean', 'Max', 'Min', 'Mode']
+        header = ['Item Name', 'Amount', 'Mean', 'Max', 'Min', 'Mode', 'Ducat', 'Type']
         writer.writerow(header) #Write to file
         for item in items:
-            data = [item.name, item.count, item.mean, item.max, item.min, item.mode] #Workaround since writerow() doesn't accept 2 args or objects
+            data = [item.name, item.count, item.mean, item.max, item.min, item.mode, item.ducat, item.type] #Workaround since writerow() doesn't accept 2 args or objects
             writer.writerow(data)
         f.close
 
