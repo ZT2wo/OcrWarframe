@@ -15,7 +15,7 @@ itemsFinal = []
 with open(csvInvDir, 'r') as csvfile: #Extract item info
     reader = csv.reader(csvfile)
     for item in reader:
-        itemData = inventoryItemScraper.Item(item[0],item[1],item[2],item[3],item[4],item[5])
+        itemData = inventoryItemScraper.Item(item[0],item[1],item[2],item[3],item[4],item[5],item[6],item[7])
         items.append(itemData)
     csvfile.close
 
@@ -32,6 +32,11 @@ for item in items:
         # [a-z]{1,}_[a-z]{1,}_(chassis|neuroptics|systems|carapace|cerebrum)
         itemUrlValid = re.search(pattern, itemUrlValid).group()
 
+    if item.type == 'Prime':
+        itemInfo = requests.get(apiUrl + 'items/' + itemUrlValid).json()
+        for info in itemInfo['payload']['item']['items_in_set']:
+            if info['url_name'] == itemUrlValid:
+                item.ducat = info['ducats']
     orders = requests.get(apiUrl + 'items/' + itemUrlValid + '/orders').json() #Retrieve item order data
 
     relevantOrders = []
@@ -51,6 +56,8 @@ for item in items:
             if order['platinum'] < int(item.min):
                 item.min = order['platinum']
             platList.append(order['platinum'])
+
+        
         item.mean = round(platSum / len(relevantOrders))
         item.mode = int(stats.mode(platList)[0])
         itemsFinal.append(item)
@@ -58,13 +65,14 @@ for item in items:
         print(item)
     except KeyError:
         print('Error Parsing Data...  Probably OCR Misread (Check the csv for this line: %s)' % itemUrlValid)
-    time.sleep(0.34)
+    time.sleep(0.68)
 
 with open(csvMarketDir, 'w', encoding='UTF8', newline='')as f:
     writer = csv.writer(f) #Start writer
-    header = ['Item Name', 'Amount', 'Mean', 'Max', 'Min', 'Mode']
+    header = ['Item Name', 'Amount', 'Mean', 'Max', 'Min', 'Mode', 'Ducat', 'Type']
     writer.writerow(header) #Write to file
     for item in itemsFinal:
-        data = [item.name, item.count, item.mean, item.max, item.min, item.mode] #Workaround since writerow() doesn't accept 2 args or objects
+        data = [item.name, item.count, item.mean, item.max, item.min, item.mode, item.ducat, item.type] #Workaround since writerow() doesn't accept 2 args or objects
         writer.writerow(data)
     f.close
+
