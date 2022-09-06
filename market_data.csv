@@ -1,44 +1,114 @@
 Item Name,Amount,Mean,Max,Min,Mode,Ducat,Type
-Akbolto Prime Link,1,7,25,4,5,45,Prime
-Aksomati Prime Barrel,2,10,25,5,8,45,Prime
-Aksomati Prime Receiver,1,10,20,5,9,15,Prime
-Astilla Prime Barrel,2,19,90,9,10,100,Prime
-Astilla Prime Stock,1,10,25,5,10,45,Prime
-Atlas Prime Chassis Blueprint,1,9,25,4,5,45,Prime
-Atlas Prime Systems Blueprint,1,9,75,3,5,45,Prime
-Banshee Prime Neuroptics Blueprint,1,9,20,5,5,15,Prime
-Baza Prime Barrel,3,7,25,3,5,45,Prime
-Braton Prime Barrel,1,7,20,3,4,15,Prime
-Braton Prime Stock,1,5,20,1,2,25,Prime
-Bronco Prime Receiver,1,6,20,3,5,15,Prime
-Burston Prime Receiver,2,6,20,2,3,15,Prime
-Burston Prime Stock,1,7,20,2,5,15,Prime
-Carrier Prime Carapace,1,18,25,15,15,15,Prime
-Chroma Prime Chassis Blueprint,1,9,20,5,10,25,Prime
-Dakra Prime Blade,1,39,60,30,40,65,Prime
-Dethcube Prime Carapace,1,6,25,3,5,45,Prime
-Dual Kamas Prime Handle,1,12,25,7,10,45,Prime
-Equinox Prime Chassis Blueprint,1,9,20,5,5,15,Prime
-Fang Prime Handle,2,11,30,7,7,25,Prime
-Frost Prime Systems Blueprint,1,22,30,14,20,45,Prime
-Galatine Prime Blade,1,9,20,5,7,15,Prime
-Gara Prime Chassis Blueprint,1,10,25,5,10,45,Prime
-Pressure Point,12,7,20,1,1,0,Mod
-Ammo Drum,1,24,100,1,1,0,Mod
-Regen,1,8,20,2,2,0,Mod
-Hell's Chamber,1,11,100,2,2,0,Mod
-Flux Overdrive,1,12,100,2,3,0,Mod
-Thief's Wit,1,7,20,1,5,0,Mod
-Lingering Torment,5,17,30,4,4,0,Mod
-Repair Kit,10,22,100,2,20,0,Mod
-Magazine Warp,8,20,20,20,20,0,Mod
-Calculated Redirection,1,40,150,3,3,0,Mod
-Lasting Sting,1,60,200,5,5,0,Mod
-Heated Charge,1,8,20,2,5,0,Mod
-Convulsion,5,10,20,2,5,0,Mod
-Rupture,10,10,20,1,1,0,Mod
-Melee Prowess,18,7,20,1,4,0,Mod
-Disruptor,1,20,20,20,20,0,Mod
-Kinetic Ricochet,1,12,100,1,3,0,Mod
-Jagged Edge,1,16,100,3,10,0,Mod
-North Wind,5,7,20,2,2,0,Mod
+Akbolto Prime Blueprint,1,11,30,3,10,15,Prime
+Akbolto Prime Link,1,13,40,3,5,45,Prime
+Akjagara Prime Blueprint,1,8,30,2,5,15,Prime
+Aksomati Prime Barrel,2,14,30,9,14,45,Prime
+Aksomati Prime Blueprint,1,9,30,3,5,15,Prime
+Aksomati Prime Receiver,2,13,30,5,10,15,Prime
+Astilla Prime Barrel,1,38,90,12,20,100,Prime
+Astilla Prime Stock,1,9,50,2,5,45,Prime
+Atlas Prime Blueprint,1,10,30,2,5,15,Prime
+Atlas Prime Chassis Blueprint,1,11,30,5,5,45,Prime
+Atlas Prime Systems Blueprint,1,11,30,5,5,45,Prime
+Baza Prime Barrel,1,12,30,5,5,45,Prime
+Bronco Prime Receiver,1,13,30,6,8,15,Prime
+Burston Prime Blueprint,1,10,30,3,4,15,Prime
+Burston Prime Receiver,1,6,30,2,2,15,Prime
+Burston Prime Stock,1,9,30,2,5,15,Prime
+Carrier Prime Carapace,2,29,70,15,15,15,Prime
+Cernos Prime Blueprint,1,12,30,5,10,45,Prime
+Chroma Prime Blueprint,1,10,30,4,5,15,Prime
+Chroma Prime Chassis Blueprint,1,13,30,5,10,25,Prime
+Corinth Prime Blueprint,1,15,45,4,4,15,Prime
+Dakra Prime Blade,1,46,70,30,30,65,Prime
+Dethcube Prime Blueprint,1,27,90,6,15,100,Prime
+Dethcube Prime Carapace,1,11,30,4,4,45,Prime
+Dual Kamas Prime Handle,1,21,50,8,20,45,Prime
+Equinox Prime Chassis Blueprint,1,10,30,3,5,15,Prime
+Euphona Prime Blueprint,1,10,30,3,10,15,Prime
+Fang Prime Handle,1,12,30,5,10,25,Prime
+Frost Prime Chassis Blueprint,1,24,50,17,20,15,Prime
+Frost Prime Systems Blueprint,1,24,50,18,19,45,Prime
+Galatine Prime Blade,1,10,30,4,5,15,Prime
+Gara Prime Chassis Blueprint,1,13,30,8,10,45,Prime
+Gara Prime Neuroptics Blueprint,1,7,30,2,5,45,Prime
+Gara Prime Systems Blueprint,1,16,30,5,10,15,Prime
+Guandao Prime Blueprint,1,8,30,3,3,45,Prime
+Guandao Prime Handle,2,23,90,10,15,100,Prime
+Helios Prime Blueprint,1,10,30,4,10,45,Prime
+Hikou Prime Pouch,1,27,50,12,15,15,Prime
+Hydroid Prime Blueprint,1,17,50,8,15,45,Prime
+Inaros Prime Chassis Blueprint,1,9,39,3,4,45,Prime
+Inaros Prime Neuroptics Blueprint,1,45,90,20,30,100,Prime
+Inaros Prime Systems Blueprint,1,11,30,7,10,15,Prime
+Ivara Prime Blueprint,2,11,30,4,10,45,Prime
+Ivara Prime Chassis Blueprint,1,39,90,24,30,100,Prime
+Ivara Prime Systems Blueprint,2,11,30,6,10,45,Prime
+Karyst Prime Blueprint,1,20,30,10,10,15,Prime
+Karyst Prime Handle,1,8,30,3,5,45,Prime
+Kavasa Prime Kubrow Collar Blueprint,1,11,30,8,10,45,Prime
+Kronen Prime Blade,1,38,200,20,30,100,Prime
+Kronen Prime Blueprint,1,10,30,5,10,15,Prime
+Latron Prime Barrel,1,18,50,9,12,15,Prime
+Lex Prime Barrel,1,12,30,1,5,15,Prime
+Limbo Prime Chassis Blueprint,1,75,150,40,70,100,Prime
+Mag Prime Chassis Blueprint,1,30,70,22,25,45,Prime
+Magnus Prime Blueprint,1,7,30,3,3,15,Prime
+Mesa Prime Blueprint,2,11,40,4,7,45,Prime
+Mesa Prime Chassis Blueprint,3,12,40,5,10,15,Prime
+Mirage Prime Systems Blueprint,1,21,50,15,20,45,Prime
+Nami Skyla Prime Handle,1,23,70,12,14,45,Prime
+Nekros Prime Chassis Blueprint,1,21,50,10,15,15,Prime
+Nezha Prime Blueprint,1,8,30,3,5,45,Prime
+Nezha Prime Chassis,1,23,90,12,20,100,Prime
+Nezha Prime Neuroptics,1,42,90,25,30,100,Prime
+Nezha Prime Systems,1,7,30,1,3,15,Prime
+Nidus Prime Blueprint,1,10,50,2,5,45,Prime
+Nidus Prime Systems Blueprint,1,7,30,2,5,15,Prime
+Nyx Prime Blueprint,2,13,30,5,10,15,Prime
+Nyx Prime Chassis Blueprint,1,12,30,8,10,65,Prime
+Nyx Prime Systems Blueprint,1,11,30,7,10,45,Prime
+Octavia Prime Chassis Blueprint,1,10,30,5,10,45,Prime
+Octavia Prime Neuroptics Blueprint,1,8,30,2,3,15,Prime
+Octavia Prime Systems Blueprint,1,8,30,3,5,15,Prime
+Orthos Prime Blade,1,8,30,4,5,45,Prime
+Pandero Prime Barrel,1,8,30,2,3,45,Prime
+Pandero Prime Blueprint,1,7,30,1,3,15,Prime
+Pangolin Prime Blade,1,10,30,4,10,45,Prime
+Panthera Prime Barrel,1,19,90,9,14,100,Prime
+Panthera Prime Stock,1,10,30,4,5,45,Prime
+Pyrana Prime Barrel,1,14,30,8,8,15,Prime
+Rhino Prime Chassis Blueprint,2,27,90,14,20,65,Prime
+Rhino Prime Systems Blueprint,1,13,50,7,10,15,Prime
+Rubico Prime Receiver,2,12,30,7,8,15,Prime
+Rubico Prime Stock,1,12,30,9,10,45,Prime
+Scindo Prime Blade,1,26,90,13,20,100,Prime
+Scindo Prime Handle,2,12,30,5,10,25,Prime
+Sybaris Prime Receiver,1,15,30,9,20,45,Prime
+Tekko Prime Blueprint,1,10,30,3,5,45,Prime
+Tekko Prime Gauntlet,1,16,30,9,10,15,Prime
+Tenora Prime Barrel,1,16,90,8,10,100,Prime
+Tenora Prime Blueprint,1,11,30,1,5,15,Prime
+Tenora Prime Stock,1,11,30,5,5,45,Prime
+Tiberon Prime Blueprint,1,10,30,4,5,25,Prime
+Tiberon Prime Receiver,1,9,30,3,5,15,Prime
+Tiberon Prime Stock,1,22,90,14,15,100,Prime
+Titania Prime Blueprint,1,12,30,6,10,45,Prime
+Titania Prime Neuroptics Blueprint,1,12,50,3,5,45,Prime
+Titania Prime Systems Blueprint,3,48,90,35,35,100,Prime
+Trinity Prime Chassis Blueprint,1,17,50,10,15,45,Prime
+Trinity Prime Neuroptics Blueprint,1,24,50,15,20,25,Prime
+Valkyr Prime Blueprint,1,12,30,5,10,15,Prime
+Vectis Prime Blueprint,1,18,50,8,10,45,Prime
+Venka Prime Blades,1,19,50,9,10,15,Prime
+Venka Prime Blueprint,1,11,30,5,10,45,Prime
+Volnus Prime Blueprint,1,6,30,2,2,15,Prime
+Volnus Prime Handle,1,21,90,10,10,100,Prime
+Volnus Prime Head,1,8,40,3,3,45,Prime
+Volt Prime Chassis Blueprint,1,18,50,11,15,45,Prime
+Wukong Prime Chassis Blueprint,1,11,30,4,10,45,Prime
+Zakti Prime Barrel,1,7,30,2,5,45,Prime
+Zephyr Prime Blueprint,2,14,70,4,6,65,Prime
+Zephyr Prime Neuroptics Blueprint,1,15,40,5,8,15,Prime
+Zhuge Prime Blueprint,1,13,30,5,10,45,Prime
+Odonata Prime Blueprint,1,14,50,5,10,45,Prime

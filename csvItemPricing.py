@@ -31,12 +31,14 @@ for item in items:
         pattern = re.compile('[a-z]{1,}._[a-z]{1,}._(chassis|neuroptics|systems|carapace|cerebrum)')
         # [a-z]{1,}_[a-z]{1,}_(chassis|neuroptics|systems|carapace|cerebrum)
         itemUrlValid = re.search(pattern, itemUrlValid).group()
-
     if item.type == 'Prime':
-        itemInfo = requests.get(apiUrl + 'items/' + itemUrlValid).json()
-        for info in itemInfo['payload']['item']['items_in_set']:
-            if info['url_name'] == itemUrlValid:
-                item.ducat = info['ducats']
+        try:
+            itemInfo = requests.get(apiUrl + 'items/' + itemUrlValid).json()
+            for info in itemInfo['payload']['item']['items_in_set']:
+                if info['url_name'] == itemUrlValid:
+                    item.ducat = info['ducats']
+        except KeyError:
+            print('Bad Url due to csv VVV')
     orders = requests.get(apiUrl + 'items/' + itemUrlValid + '/orders').json() #Retrieve item order data
 
     relevantOrders = []
